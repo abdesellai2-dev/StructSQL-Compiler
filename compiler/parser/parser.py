@@ -37,8 +37,8 @@ class Parser:
               return token
          return False  
     def valuetail(self):
-        if self.currenttoken() is None: #epsilon
-            return True #si epsilon exist -> true sinon False
+        if self.currenttoken() is None:
+            return False
 
         if self.currenttoken().type == "COMMA":
             self.avance()
@@ -48,7 +48,12 @@ class Parser:
 
             return False
 
-        return True
+        if self.currenttoken().type == "RIGHT_PARENTEZ":
+            return True
+
+        return False
+
+            
     def valuelist(self):
         if self.currenttoken() is None:
                     return False #si epsilon exist -> true sinon False
@@ -139,7 +144,7 @@ class Parser:
         return False
     def whereoption(self):
         if self.currenttoken() is None:
-            return True #pas obligé d'utliser WHERE (epsilon exist ici back to 118)
+            return False
 
         if self.currenttoken().type == "WHERE":
             self.avance()
@@ -149,10 +154,13 @@ class Parser:
 
             return False
 
-        return True
+        if self.currenttoken().type == "SEMICOLON":
+            return True
+
+        return False
     def idtail(self):
         if self.currenttoken() is None:
-            return True
+            return False
 
         if self.currenttoken().type == "COMMA":
             self.avance()
@@ -166,7 +174,10 @@ class Parser:
 
             return False
 
-        return True
+        if self.currenttoken().type == "FROM":
+            return True
+
+        return False
     def selectlist(self):
         if self.currenttoken() is None:
             return False
@@ -213,7 +224,7 @@ class Parser:
         return False
     def instructions(self):
         if self.currenttoken() is None:
-            return True
+            return False
 
         if self.currenttoken().type == "INSERT":
             if self.insertstatment():
@@ -251,7 +262,11 @@ class Parser:
 
             return False
 
-        return True
+        if (self.currenttoken().type == "COMMA"
+            or self.currenttoken().type == "RIGHT_PARENTEZ"):
+            return True
+
+        return False
     def typededonnes(self):
         if self.currenttoken() is None:
             return False
@@ -284,7 +299,7 @@ class Parser:
         return False
     def attributetail(self):
         if self.currenttoken() is None:
-            return True
+            return False
 
         if self.currenttoken().type == "COMMA":
             self.avance()
@@ -294,7 +309,10 @@ class Parser:
 
             return False
 
-        return True
+        if self.currenttoken().type == "RIGHT_PARENTEZ":
+            return True
+
+        return False
     def attributelist(self):
         if self.singleattribut():
             if self.attributetail():
