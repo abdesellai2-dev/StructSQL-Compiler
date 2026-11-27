@@ -396,5 +396,8 @@ class Parser:
                                 if self.currenttoken() is None:
                                     return True
 
+                                if self.currenttoken().type == "EOF":
+                                    return True
+
         return False
         
