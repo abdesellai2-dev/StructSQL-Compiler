@@ -1,0 +1,18 @@
+PROGRAMME Universite;
+
+CREATE TABLE Etudiant (
+    id INTEGER,
+    nom string[20],
+    age INTEGER,
+    moyenne REAL
+);
+
+INSERT INTO Etudiant VALUES (1, 'benali', 21, 14.5);
+INSERT INTO Etudiant VALUES (2, 'hadjmoussa', 22, 16.0);
+INSERT INTO Etudiant VALUES (3, ’brahmi’, 20, 11.5);
+
+SELECT * FROM Etudiant;
+SELECT id, moyenne FROM Etudiant;
+SELECT * FROM Etudiant WHERE age > 20;
+
+FIN

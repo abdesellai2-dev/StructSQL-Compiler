@@ -1,0 +1,4 @@
+PROGRAMME Test;
+CREATE TABLE T (nom String[10]);
+INSERT INTO T VALUES ('benali);
+FIN

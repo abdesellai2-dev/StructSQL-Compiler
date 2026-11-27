@@ -1,0 +1,4 @@
+PROGRAMME Test;
+CREATE TABLE T (nom String[20]);
+INSERT INTO T VALUES ('ali baba');
+FIN
