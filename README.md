@@ -8,7 +8,7 @@ A simple compiler for **StructSQL**, a SQL-inspired programming language, develo
 - Syntax Error Detection and Reporting  (DONE)
 - Semantic Analysis (In Progress)
 - Code Generation (In Progress)
-
+- GUI (In Progresss)
 ### Technologies
 - Python (without ready fonctions)
 100% from scratch
